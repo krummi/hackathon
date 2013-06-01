@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+NSMutableData *recievedData;
+
 @interface RSFirstViewController : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+
+@property(nonatomic, assign) NSMutableData *recivedData;
 
 - (void)sendImageDataToServer:(UIImage*)imageToPost;
 

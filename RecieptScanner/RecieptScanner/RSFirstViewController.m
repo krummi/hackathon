@@ -54,8 +54,21 @@
 
 - (void)sendImageDataToServer:(UIImage*)imageToPost {
     
-    NSURL* requestURL = [[NSURL alloc] initWithString:@"https://api.imgur.com/3/image"];
-    NSString *boundary = @"---------------------------7da24f2e50046";
+    // Dictionary that holds post parameters. You can set your post parameters that your server accepts or programmed to accept.
+    NSMutableDictionary* _params = [[NSMutableDictionary alloc] init];
+    [_params setObject:@"1.0" forKey:@"ver"];
+    [_params setObject:@"en" forKey:@"lan"];
+    
+    NSLog(@"params set");
+    
+    // the boundary string : a random string, that will not repeat in post data, to separate post data fields.
+    NSString *boundary = @"----------V2ymHFg03ehbqgZCaKO6jy";
+    
+    // string constant for the post parameter 'file'. My server uses this name: `file`. Your's may differ
+    NSString* FileParamConstant = @"file";
+    
+    // the server url to which the image (or the media) is uploaded. Use your server url here
+    NSURL* requestURL = [NSURL URLWithString:@"http://eiriksson.is:9999"];
     // create request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
@@ -82,7 +95,7 @@
     if (imageData) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"image.jpg\"\r\n", FileParamConstant] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithString:@"Content-Type: image/jpeg\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:imageData];
         [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     }
@@ -94,12 +107,23 @@
     
     // set URL
     [request setURL:requestURL];
+    
+    // make the connection to the web
+    NSURLResponse *response;
+    NSError *err;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    NSLog(@"responseData: %@", responseData);
+    NSLog(@"error: %@", err);
+
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     // get picked image from dict
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
+    NSLog(@"Image selected");
+    NSLog(@"sending to server...");
+    [self sendImageDataToServer:image];
     
     
     [self dismissViewControllerAnimated:YES completion:nil];
