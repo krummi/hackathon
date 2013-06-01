@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F5A4B4571758AEB000DDFB34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A4B4561758AEB000DDFB34 /* UIKit.framework */; };
+		F5A4B4591758AEB000DDFB34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A4B4581758AEB000DDFB34 /* Foundation.framework */; };
+		F5A4B45B1758AEB000DDFB34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A4B45A1758AEB000DDFB34 /* CoreGraphics.framework */; };
+		F5A4B4611758AEB000DDFB34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B45F1758AEB000DDFB34 /* InfoPlist.strings */; };
+		F5A4B4631758AEB000DDFB34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4B4621758AEB000DDFB34 /* main.m */; };
+		F5A4B4671758AEB000DDFB34 /* RSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4B4661758AEB000DDFB34 /* RSAppDelegate.m */; };
+		F5A4B4691758AEB000DDFB34 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B4681758AEB000DDFB34 /* Default.png */; };
+		F5A4B46B1758AEB000DDFB34 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B46A1758AEB000DDFB34 /* Default@2x.png */; };
+		F5A4B46D1758AEB000DDFB34 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B46C1758AEB000DDFB34 /* Default-568h@2x.png */; };
+		F5A4B4701758AEB000DDFB34 /* RSFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4B46F1758AEB000DDFB34 /* RSFirstViewController.m */; };
+		F5A4B4721758AEB000DDFB34 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B4711758AEB000DDFB34 /* first.png */; };
+		F5A4B4741758AEB000DDFB34 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B4731758AEB000DDFB34 /* first@2x.png */; };
+		F5A4B4771758AEB000DDFB34 /* RSSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4B4761758AEB000DDFB34 /* RSSecondViewController.m */; };
+		F5A4B4791758AEB000DDFB34 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B4781758AEB000DDFB34 /* second.png */; };
+		F5A4B47B1758AEB000DDFB34 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B47A1758AEB000DDFB34 /* second@2x.png */; };
+		F5A4B47E1758AEB000DDFB34 /* RSFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B47C1758AEB000DDFB34 /* RSFirstViewController.xib */; };
+		F5A4B4811758AEB000DDFB34 /* RSSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B47F1758AEB000DDFB34 /* RSSecondViewController.xib */; };
+		F5A4B4881758B0B100DDFB34 /* ScannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4B4871758B0B100DDFB34 /* ScannerView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F5A4B4531758AEB000DDFB34 /* RecieptScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecieptScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5A4B4561758AEB000DDFB34 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F5A4B4581758AEB000DDFB34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F5A4B45A1758AEB000DDFB34 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F5A4B45E1758AEB000DDFB34 /* RecieptScanner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RecieptScanner-Info.plist"; sourceTree = "<group>"; };
+		F5A4B4601758AEB000DDFB34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F5A4B4621758AEB000DDFB34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F5A4B4641758AEB000DDFB34 /* RecieptScanner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecieptScanner-Prefix.pch"; sourceTree = "<group>"; };
+		F5A4B4651758AEB000DDFB34 /* RSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAppDelegate.h; sourceTree = "<group>"; };
+		F5A4B4661758AEB000DDFB34 /* RSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAppDelegate.m; sourceTree = "<group>"; };
+		F5A4B4681758AEB000DDFB34 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F5A4B46A1758AEB000DDFB34 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F5A4B46C1758AEB000DDFB34 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F5A4B46E1758AEB000DDFB34 /* RSFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSFirstViewController.h; sourceTree = "<group>"; };
+		F5A4B46F1758AEB000DDFB34 /* RSFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSFirstViewController.m; sourceTree = "<group>"; };
+		F5A4B4711758AEB000DDFB34 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		F5A4B4731758AEB000DDFB34 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		F5A4B4751758AEB000DDFB34 /* RSSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSecondViewController.h; sourceTree = "<group>"; };
+		F5A4B4761758AEB000DDFB34 /* RSSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSecondViewController.m; sourceTree = "<group>"; };
+		F5A4B4781758AEB000DDFB34 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		F5A4B47A1758AEB000DDFB34 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		F5A4B47D1758AEB000DDFB34 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RSFirstViewController.xib; sourceTree = "<group>"; };
+		F5A4B4801758AEB000DDFB34 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RSSecondViewController.xib; sourceTree = "<group>"; };
+		F5A4B4871758B0B100DDFB34 /* ScannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScannerView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5A4B4501758AEB000DDFB34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5A4B4571758AEB000DDFB34 /* UIKit.framework in Frameworks */,
+				F5A4B4591758AEB000DDFB34 /* Foundation.framework in Frameworks */,
+				F5A4B45B1758AEB000DDFB34 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F5A4B44A1758AEB000DDFB34 = {
+			isa = PBXGroup;
+			children = (
+				F5A4B45C1758AEB000DDFB34 /* RecieptScanner */,
+				F5A4B4551758AEB000DDFB34 /* Frameworks */,
+				F5A4B4541758AEB000DDFB34 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F5A4B4541758AEB000DDFB34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5A4B4531758AEB000DDFB34 /* RecieptScanner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5A4B4551758AEB000DDFB34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5A4B4561758AEB000DDFB34 /* UIKit.framework */,
+				F5A4B4581758AEB000DDFB34 /* Foundation.framework */,
+				F5A4B45A1758AEB000DDFB34 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5A4B45C1758AEB000DDFB34 /* RecieptScanner */ = {
+			isa = PBXGroup;
+			children = (
+				F5A4B4651758AEB000DDFB34 /* RSAppDelegate.h */,
+				F5A4B4661758AEB000DDFB34 /* RSAppDelegate.m */,
+				F5A4B46E1758AEB000DDFB34 /* RSFirstViewController.h */,
+				F5A4B46F1758AEB000DDFB34 /* RSFirstViewController.m */,
+				F5A4B4711758AEB000DDFB34 /* first.png */,
+				F5A4B4731758AEB000DDFB34 /* first@2x.png */,
+				F5A4B4751758AEB000DDFB34 /* RSSecondViewController.h */,
+				F5A4B4761758AEB000DDFB34 /* RSSecondViewController.m */,
+				F5A4B4781758AEB000DDFB34 /* second.png */,
+				F5A4B47A1758AEB000DDFB34 /* second@2x.png */,
+				F5A4B47C1758AEB000DDFB34 /* RSFirstViewController.xib */,
+				F5A4B4871758B0B100DDFB34 /* ScannerView.xib */,
+				F5A4B47F1758AEB000DDFB34 /* RSSecondViewController.xib */,
+				F5A4B45D1758AEB000DDFB34 /* Supporting Files */,
+			);
+			path = RecieptScanner;
+			sourceTree = "<group>";
+		};
+		F5A4B45D1758AEB000DDFB34 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5A4B45E1758AEB000DDFB34 /* RecieptScanner-Info.plist */,
+				F5A4B45F1758AEB000DDFB34 /* InfoPlist.strings */,
+				F5A4B4621758AEB000DDFB34 /* main.m */,
+				F5A4B4641758AEB000DDFB34 /* RecieptScanner-Prefix.pch */,
+				F5A4B4681758AEB000DDFB34 /* Default.png */,
+				F5A4B46A1758AEB000DDFB34 /* Default@2x.png */,
+				F5A4B46C1758AEB000DDFB34 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5A4B4521758AEB000DDFB34 /* RecieptScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5A4B4841758AEB000DDFB34 /* Build configuration list for PBXNativeTarget "RecieptScanner" */;
+			buildPhases = (
+				F5A4B44F1758AEB000DDFB34 /* Sources */,
+				F5A4B4501758AEB000DDFB34 /* Frameworks */,
+				F5A4B4511758AEB000DDFB34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecieptScanner;
+			productName = RecieptScanner;
+			productReference = F5A4B4531758AEB000DDFB34 /* RecieptScanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5A4B44B1758AEB000DDFB34 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RS;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Kári Tristan Helgason";
+			};
+			buildConfigurationList = F5A4B44E1758AEB000DDFB34 /* Build configuration list for PBXProject "RecieptScanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F5A4B44A1758AEB000DDFB34;
+			productRefGroup = F5A4B4541758AEB000DDFB34 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5A4B4521758AEB000DDFB34 /* RecieptScanner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5A4B4511758AEB000DDFB34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5A4B4611758AEB000DDFB34 /* InfoPlist.strings in Resources */,
+				F5A4B4691758AEB000DDFB34 /* Default.png in Resources */,
+				F5A4B46B1758AEB000DDFB34 /* Default@2x.png in Resources */,
+				F5A4B46D1758AEB000DDFB34 /* Default-568h@2x.png in Resources */,
+				F5A4B4721758AEB000DDFB34 /* first.png in Resources */,
+				F5A4B4741758AEB000DDFB34 /* first@2x.png in Resources */,
+				F5A4B4791758AEB000DDFB34 /* second.png in Resources */,
+				F5A4B47B1758AEB000DDFB34 /* second@2x.png in Resources */,
+				F5A4B47E1758AEB000DDFB34 /* RSFirstViewController.xib in Resources */,
+				F5A4B4811758AEB000DDFB34 /* RSSecondViewController.xib in Resources */,
+				F5A4B4881758B0B100DDFB34 /* ScannerView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5A4B44F1758AEB000DDFB34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5A4B4631758AEB000DDFB34 /* main.m in Sources */,
+				F5A4B4671758AEB000DDFB34 /* RSAppDelegate.m in Sources */,
+				F5A4B4701758AEB000DDFB34 /* RSFirstViewController.m in Sources */,
+				F5A4B4771758AEB000DDFB34 /* RSSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F5A4B45F1758AEB000DDFB34 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5A4B4601758AEB000DDFB34 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F5A4B47C1758AEB000DDFB34 /* RSFirstViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5A4B47D1758AEB000DDFB34 /* en */,
+			);
+			name = RSFirstViewController.xib;
+			sourceTree = "<group>";
+		};
+		F5A4B47F1758AEB000DDFB34 /* RSSecondViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5A4B4801758AEB000DDFB34 /* en */,
+			);
+			name = RSSecondViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5A4B4821758AEB000DDFB34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F5A4B4831758AEB000DDFB34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5A4B4851758AEB000DDFB34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RecieptScanner/RecieptScanner-Prefix.pch";
+				INFOPLIST_FILE = "RecieptScanner/RecieptScanner-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F5A4B4861758AEB000DDFB34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RecieptScanner/RecieptScanner-Prefix.pch";
+				INFOPLIST_FILE = "RecieptScanner/RecieptScanner-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5A4B44E1758AEB000DDFB34 /* Build configuration list for PBXProject "RecieptScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5A4B4821758AEB000DDFB34 /* Debug */,
+				F5A4B4831758AEB000DDFB34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5A4B4841758AEB000DDFB34 /* Build configuration list for PBXNativeTarget "RecieptScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5A4B4851758AEB000DDFB34 /* Debug */,
+				F5A4B4861758AEB000DDFB34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5A4B44B1758AEB000DDFB34 /* Project object */;
+}
