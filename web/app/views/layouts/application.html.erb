@@ -1,19 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Verðvaktin</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verðvaktin</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <!--<script type="text/javascript" src="scripts/jquery.tipsy.js"></script>-->
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome-ie7.css">
+
+    <script src="http://use.typekit.net/ajf8ggy.js"></script>
+    <script>
+        try { Typekit.load(); } catch (e) {}
+    </script>
 </head>
 <body>
 
-<div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<div class="content pure-g" >
+    <div class="header pure-u-1">
+        <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal" style="background-color: #EDEDED;">
+            <a class="pure-menu-heading" href="/" style="font-size: 20px;">Verðvaktin</a>
+
+            <ul>
+                <li class="pure-menu-selected"><a href="#">Heim</a></li>
+                <li class="pure-menu-selected"><a href="/um">Um verkefnið</a></li>
+            </ul>
+
+            <div style="float: right; padding-right: 20px; padding-top: 5px;">
+                <% if user_signed_in? %>
+                    <a class="pure-button pb-button" href="/users/edit" style="background-color: green; color: white; display: inline;">
+                        <i class="icon-user"></i>
+                        Þinn aðgangur
+                    </a>
+                    &nbsp;
+                    <a class="pure-button pb-button" href="/users/sign_out" style="background-color: green; color: white;  display: inline;" data-method="delete">
+                        <i class="icon-user"></i>
+                        Útskráning
+                    </a>
+                <% elsif %>
+                    <a class="pure-button pb-button" href="/users/sign_up" style="color: white; background-color: blue; display: inline;">
+                        <i class="icon-user"></i>
+                        Nýskráning
+                    </a>
+                    &nbsp;
+                    <a class="pure-button pb-button" href="/users/sign_in" style="color: white; background-color: green; display: inline;">
+                        <i class="icon-user"></i>
+                        Innskráning
+                    </a>
+                <% end %>
+            </div>
+        </div>
+    </div>
+
+    <div class="pure-u-1" style="padding: 55px 20px 20px 20px; background: #fff;">
+
+                <div>
+                    <p class="notice"><%= notice %></p>
+                    <p class="alert"><%= alert %></p>
+                </div>   
+                <div class="pure-g-r">
+                    <div class="pure-u-1-4">
+                        <div class="pure-menu pure-menu-open">
+                            <a class="pure-menu-heading">Yahoo! Sites</a>
+
+                            <ul>
+                                <li><a href="#">Flickr</a></li>
+                                <li><a href="#">Messenger</a></li>
+                                <li><a href="#">Sports</a></li>
+                                <li><a href="#">Finance</a></li>
+                                <li class="pure-menu-heading">More Sites!</li>
+                                <li><a href="#">Games</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">OMG!</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pure-u-3-4">
+                        <div style="padding-left: 20px;">
+                            <%= yield %>
+                        </div>
+                    </div>
+                </div>
+
+    </div>
+<!--
+    <div class="content pure-u-1">
+
+
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <img src="http://placehold.it/400x250"
+                         alt="Placeholder image for example.">
+                </div>
+            </div>
+
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    <h4 class="content-subhead">Some more small text</h4>
+
+                    <h3>Etiam iaculis iaculis lobortis.</h3>
+                    <p>
+                        Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Morbi fermentum dui sit amet libero tincidunt rutrum. Nam sodales consequat metus sed accumsan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pure-g-r">
+            <div class="pure-u-1-4">
+                <div class="l-box">
+                    <h3>Subheading</h3>
+                    <p>
+                        Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pure-u-1-4">
+                <div class="l-box">
+                    <h3>Subheading</h3>
+                    <p>
+                        Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pure-u-1-4">
+                <div class="l-box">
+                    <h3>Subheading</h3>
+                    <p>
+                        Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pure-u-1-4">
+                <div class="l-box">
+                    <h3>Subheading</h3>
+                    <p>
+                        Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pure-g-r">
+            <div class="pure-u-1">
+                <div class="l-box ribbon">
+                    <h2>Get started now.</h2>
+                    <a href="#" class="pure-button primary-button">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="footer pure-u-1">
+        &copy; Probros 2013
+    </div>
 </div>
 
-<%= yield %>
+<script src="http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
+<script>
+YUI().use('node-base', 'node-event-delegate', function (Y) {
+
+    // This just makes sure that the href="#" attached to the <a> elements
+    // don't scroll you back up the page.
+    Y.one('.content').delegate('click', function (e) {
+        e.preventDefault();
+    }, 'a[href="#"]');
+});
+</script>
 
 </body>
 </html>
+

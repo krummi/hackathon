@@ -1,15 +1,81 @@
-<p id="notice"><%= notice %></p>
+
+<h1><%= @product.name %></h1>
+
+<div id="testing">
+
+</div>
 
 <p>
   <b>Name:</b>
   <%= @product.name %>
 </p>
 
-<p>
-  <b>Is per kg:</b>
-  <%= @product.is_per_kg %>
-</p>
-
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+<script type="text/javascript">
+function createChart(id, y_min, y_max, y_title, color, data, formatter_func) {
+    chart = new Highcharts.Chart({
+        chart: {
+            renderTo: id,
+            type: 'spline'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            type: 'datetime',
+            dateTimeLabelFormats: { // don't display the dummy year
+                week: '%e. okt'
+            }
+        },
+
+        yAxis: {
+            title: {
+                text: y_title
+            },
+            min: y_min,
+            max: y_max,
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: color
+            }]
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            formatter: formatter_func
+        },
+        legend: {
+            enabled: false
+        },
+        series: [{
+            name: 'Verð (kr.)',
+            color: color,
+            data: data
+        }]
+    });
+}
+
+    // Create charts.
+    createChart("testing", 76, 80, "Verð (kr.)", "green", [
+        [Date.UTC(2012, 9,  1),  76.7],
+        [Date.UTC(2012, 9,  2),  76.7],
+        [Date.UTC(2012, 9,  3),  76.1],
+        [Date.UTC(2012, 9,  4),  76.5],
+        [Date.UTC(2012, 9,  5),  76.4], 
+        [Date.UTC(2012, 9,  6),  76.5],
+        [Date.UTC(2012, 9, 10),  77.2],
+        [Date.UTC(2012, 9, 11),  77.5], 
+        [Date.UTC(2012, 9, 15),  76.7], 
+        [Date.UTC(2012, 9, 19),  77.5],
+        [Date.UTC(2012, 9, 23),  77.4],
+        [Date.UTC(2012, 9, 24),  77.5],
+        [Date.UTC(2012, 9, 29),  77.8]
+    ], function() {
+        return Highcharts.dateFormat('%e. október', this.x) +': '+ this.y + ' kg.';
+    });
+</script>
