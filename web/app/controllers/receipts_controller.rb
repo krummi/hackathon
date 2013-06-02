@@ -34,32 +34,33 @@ class ReceiptsController < ApplicationController
 
   # post /receipts
   def from_text
-    lines = request.raw_post.split("\n")
-
-    items = []
-
-    lines.each do |a|
-      tokens = a.strip().split(" ")
-      if tokens.length >= 3
-        type = tokens[0]
-        name = tokens[1..-4].join(" ")
-        quantity = tokens[-3]
-        price_per_item = tokens[-2]
-        price_total = tokens[-1]
-        items << { 
-            :letter => type, 
-            :name => name, 
-            :quantity => quantity,
-            :price => price_per_item,
-            :total => price_total
-        }
+    if params[:name].present? && params[:data].present?
+      lines = params[:data].split("\n")
+      items = []
+      lines.each do |a|
+        tokens = a.strip().split(" ")
+        if tokens.length >= 5
+          type = tokens[0]
+          name = tokens[1..-4].join(" ")
+          quantity = tokens[-3]
+          price_per_item = tokens[-2]
+          price_total = tokens[-1]
+          items << { 
+              :letter => type, 
+              :name => name, 
+              :quantity => quantity,
+              :price => price_per_item,
+              :total => price_total
+          }
+        end
       end
+      r = Receipt.create(:store_id => 1, :user_id => 2, :timestamp => DateTime.now)
+      r.receipt_items.create(items)
+      r.save!
+      render :text => 'ok', :status => 200
+    else
+      render :text => 'you suck', :status => 403
     end
-    r = Receipt.create(:store_id => 1, :user_id => 2, :timestamp => DateTime.now)
-    r.receipt_items.create(items)
-    r.save!
-
-    render :text => 'ok', :status => 200
   end
 
   # GET /receipts/1/edit
