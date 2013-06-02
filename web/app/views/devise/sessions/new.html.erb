@@ -1,0 +1,19 @@
+<h2>Innskráning</h2>
+
+<%= form_for(resource, :html => { :class => 'pure-form' }, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+<fieldset class="pure-group">
+  <div><%= f.label :email, "Netfang" %><br />
+  <%= f.email_field :email, :class => 'pure-input-1-2' %></div>
+
+  <div><%= f.label :password, "Lykilorð" %><br />
+  <%= f.password_field :password, :class => 'pure-input-1-2' %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div style="margin-top: 10px;"><%= f.check_box :remember_me, :style => 'display: inline;' %> <%= f.label :remember_me, "Muna eftir mér" %></div>
+  <% end -%>
+</fieldset>
+  <div><%= f.submit "Sign in", :class => 'pure-button pure-input-1-2' %></div>
+<% end %>
+<br />
+<%= render "devise/shared/links" %>

@@ -10,6 +10,15 @@ class ReceiptsController < ApplicationController
     end
   end
 
+  def index_mine
+    @receipts = current_user.receipts
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @receipts }
+    end
+  end
+
   # GET /receipts/1
   # GET /receipts/1.json
   def show

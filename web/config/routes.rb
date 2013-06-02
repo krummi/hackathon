@@ -1,9 +1,9 @@
 Web::Application.routes.draw do
   resources :stores
 
-
   resources :receipt_items
 
+  get "/my/receipts" => "receipts#index_mine"
 
   resources :receipts
 

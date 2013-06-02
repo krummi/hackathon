@@ -1,11 +1,10 @@
-<h1>Kvittanir í kerfinu</h1>
+<h1>Kvittanirnar þínar</h1>
 
 <table class="pure-table" style="width: 100%;">
   <thead>
   <tr>
     <th>Dagsetning</th>
-    <th>User</th>
-    <th>Store</th>
+    <th>Búð</th>
     <th>Fjöldi vara</th>
     <th>Upphæð samtals</th>
     <th></th>
@@ -14,10 +13,14 @@
   </tr>
 </thead>
 <tbody>
+
+<% if @receipts.length == 0 %>
+  <tr><td colspan="7">Engar kvittanir komnar!</td></tr>
+<% end %>
+
 <% @receipts.each do |receipt| %>
   <tr>
     <td><%= receipt.timestamp.strftime('%d/%m/%Y') %></td>
-    <td><%= receipt.user_id %></td>
     <td><%= receipt.store ? receipt.store.name : 'Óvitað' %></td>
     <td><%= receipt.no_of_items %></td>
     <td><%= receipt.total_amount %></td>
