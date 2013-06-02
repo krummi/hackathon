@@ -45,18 +45,29 @@ class ReceiptsController < ApplicationController
           quantity = tokens[-3]
           price_per_item = tokens[-2]
           price_total = tokens[-1]
-          items << { 
-              :letter => type, 
-              :name => name, 
-              :quantity => quantity,
-              :price => price_per_item,
-              :total => price_total
-          }
+          if is_int?(quantity) && is_int?(price_per_item) && is_int?(price_total)
+            items << { 
+                :letter => type, 
+                :name => name, 
+                :quantity => quantity,
+                :price => price_per_item,
+                :total => price_total
+            }
+          end
         end
       end
-      r = Receipt.create(:store_id => 1, :user_id => 2, :timestamp => DateTime.now)
-      r.receipt_items.create(items)
-      r.save!
+      if items.length > 0
+        e = params[:name].gsub("_at_", "@")
+        attached_user = User.find_by_email(e)
+        if attached_user == nil
+          puts 'did not find any user: anonymous'
+          r = Receipt.create(:store_id => 1, :timestamp => DateTime.now)
+        elsif
+          r = Receipt.create(:store_id => 1, :user_id => attached_user.id, :timestamp => DateTime.now)
+        end
+        r.receipt_items.create(items)
+        r.save!
+      end
       render :text => 'ok', :status => 200
     else
       render :text => 'you suck', :status => 403
@@ -110,5 +121,11 @@ class ReceiptsController < ApplicationController
       format.html { redirect_to receipts_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def is_int?(x)
+    !!(x =~ /^[-+]?[0-9]+$/)
   end
 end
