@@ -15,6 +15,34 @@
   <%= @receipt.store_id %>
 </p>
 
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>Flokkur</th>
+            <th>Vöruheiti</th>
+            <th>Magn</th>
+            <th>Verð/einingu</th>
+            <th>Samtals</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+<% @receipt.receipt_items.each do |r| %>
+    <tr>
+        <td><%= r.letter %></td>
+        <td><%= r.name %></td>
+        <td><%= r.quantity %></td>
+        <td><%= r.price %></td>
+        <td><%= r.total %></td>
+    </tr>
+<% end %>
+
+    </tbody>
+</table>
+
+
+
 
 <%= link_to 'Edit', edit_receipt_path(@receipt) %> |
 <%= link_to 'Back', receipts_path %>
