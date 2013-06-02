@@ -20,8 +20,7 @@ for infile in glob.glob("*.jpg"):
     subprocess.call(["java", "-jar", "JavaOCR.jar", "imgs/" + str(counter) + ".jpg", "out"])
     stuff = ""
     for thing in os.listdir("out"):
-        subprocess.call(["./textcleaner", "-g", "-e", "none", "-f", "10", "-o", "5", "out/" + str(thing), "out/" + str(thing)])
-        subprocess.call(["tesseract", "out/" + str(thing), "temp"], stdout=FNULL, stderr=subprocess.STDOUT)
+        subprocess.call(["tesseract", "out/" + str(thing), "temp", "-psm", "7"], stdout=FNULL, stderr=subprocess.STDOUT)
         for i in os.popen("cat temp.txt"):
             stuff += i
     counter += 1
