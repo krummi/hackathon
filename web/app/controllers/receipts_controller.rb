@@ -35,6 +35,7 @@ class ReceiptsController < ApplicationController
   # post /receipts
   def from_text
     if params[:name].present? && params[:data].present?
+      puts params[:data]
       lines = params[:data].split("\n")
       items = []
       lines.each do |a|
@@ -126,6 +127,6 @@ class ReceiptsController < ApplicationController
   private
 
   def is_int?(x)
-    !!(x =~ /^[-+]?[0-9]+$/)
+    !!(x =~ /^[-+]?[0-9\.]+$/)
   end
 end
