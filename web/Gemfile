@@ -19,8 +19,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'therubyracer'
 gem 'jquery-rails'
-
 gem 'devise'
 
 # Omniauth: https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview

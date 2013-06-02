@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Timestamp:</b>
+  <%= @receipt.timestamp %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @receipt.user_id %>
+</p>
+
+<p>
+  <b>Store:</b>
+  <%= @receipt.store_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_receipt_path(@receipt) %> |
+<%= link_to 'Back', receipts_path %>

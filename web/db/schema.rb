@@ -11,11 +11,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601130827) do
+ActiveRecord::Schema.define(:version => 20130602110614) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
     t.boolean  "is_per_kg"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "receipt_items", :force => true do |t|
+    t.integer  "receipt_id"
+    t.string   "letter"
+    t.string   "name"
+    t.integer  "quantity"
+    t.integer  "price"
+    t.integer  "total"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "receipts", :force => true do |t|
+    t.datetime "timestamp"
+    t.integer  "user_id"
+    t.integer  "store_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "stores", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
