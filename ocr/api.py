@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, url_for, redirect
 from werkzeug import secure_filename
 
-UPLOAD_FOLDER = '/imgs'
+UPLOAD_FOLDER = 'imgs'
 ALLOWED_EXTENSIONS = set(['jpg', 'jpeg'])
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -25,9 +25,10 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file', filename=filename))
-    return 0
+            return "hehe"
+    return "hehe"
 
 
 if __name__ == '__main__':
+    app.debug = True
     app.run(host='0.0.0.0')
